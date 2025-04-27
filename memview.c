@@ -1,4 +1,4 @@
-// William Ng - CSC 332
+// William Ng
 // Custom Linux Shell Command: memview
 
 #include <stdio.h>

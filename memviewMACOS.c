@@ -1,13 +1,14 @@
-// William Ng - CSC 332
+// William Ng
 // Custom Linux Shell Command: memview (macOS version)
+// instead of opening /proc/self/maps ,use task_info(), mach_vm_region(), and mach_task_self() for memview
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
 #include <getopt.h>
-#include <mach/mach.h>
-#include <mach/mach_vm.h>
+#include <mach/mach.h> // Core Mach definitions (task ports, kernel types)
+#include <mach/mach_vm.h> // for virtual memory operations like mach_vm_region, mach_vm_allocate, mach_vm_read
 
 // Global variable to detect if SIGINT was received
 volatile sig_atomic_t stop_requested = 0;
@@ -87,3 +88,5 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+// gcc -o mvmacos memviewMACOS.c
+// ./memview view memory for macOS
