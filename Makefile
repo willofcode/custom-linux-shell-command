@@ -4,13 +4,13 @@ CC = gcc
 # Targets
 all: memviewlinux memviewmacos
 
-memviewlinux: memviewubuntu.c
-	$(CC) -o memview1 memviewubuntu.c
+memviewlinux: memview.c
+	$(CC) -o memviewlinux memview.c
 
 memviewmacos: memviewmacos.c
-	$(CC) -o memview2 memviewupdate.c
+	$(CC) -o memviewmacos memviewupdate.c
 
 # Clean build files
 clean:
-	rm -f memview1 memview2
+	rm -f memviewlinux memviewmacos
 
