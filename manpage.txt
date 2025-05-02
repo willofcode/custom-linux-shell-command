@@ -1,0 +1,33 @@
+MEMVIEW(1)                Custom Linux Shell Commands              MEMVIEW(1)
+
+NAME
+    memview - displays detailed memory usage of a process or the system
+
+SYNOPSIS
+    memview [-p pid] [-h]
+
+DESCRIPTION
+    memview prints the virtual memory map of the specified process, or of
+    the current process if no PID is provided. It displays each memory
+    region's start and end addresses, access permissions, region size,
+    and region type (if available).
+
+OPTIONS
+    -p pid
+        Specify the process ID whose memory map should be viewed.
+
+    -h
+        Show help message and usage information.
+
+EXAMPLES
+    View current process memory:
+        memview
+
+    View memory map of process ID 1234:
+        memview -p 1234
+
+AUTHOR
+    William Ng
+
+BUGS
+    Requires permission to access another process's /proc/<pid>/maps.
